@@ -3,7 +3,6 @@ package com.api.iChef_app_backend.models;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -12,9 +11,8 @@ public class OrderTest {
     @Test
     public void testGetId() {
         Order order = new Order();
-        UUID id = UUID.randomUUID();
-        order.setId(id);
-        assertEquals(id, order.getId());
+        order.setId(123L);
+        assertEquals(123L, order.getId());
     }
 
     @Test
@@ -31,13 +29,6 @@ public class OrderTest {
         Order order = new Order();
         order.setClient(client);
         assertEquals(client, order.getClient());
-    }
-
-    @Test
-    public void testGetDeliveryAddress() {
-        Order order = new Order();
-        order.setDeliveryAddress("123 Main St.");
-        assertEquals("123 Main St.", order.getDeliveryAddress());
     }
 
     @Test

@@ -2,8 +2,6 @@ package com.api.iChef_app_backend.models;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ProductTest {
@@ -11,9 +9,8 @@ class ProductTest {
     @Test
     public void testGetId() {
         Product product = new Product();
-        UUID id = UUID.randomUUID();
-        product.setId(id);
-        assertEquals(id, product.getId());
+        product.setId(123L);
+        assertEquals(123L, product.getId());
     }
 
     @Test

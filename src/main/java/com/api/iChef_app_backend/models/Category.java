@@ -11,7 +11,6 @@ import jakarta.persistence.Table;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @Table(name = "TB_CATEGORY")
@@ -21,7 +20,7 @@ public class Category implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Long id;
 
     @Column(nullable = false, name = "name")
     private String name;
@@ -32,11 +31,11 @@ public class Category implements Serializable {
     @OneToMany(mappedBy = "category")
     private List<Product> products;
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

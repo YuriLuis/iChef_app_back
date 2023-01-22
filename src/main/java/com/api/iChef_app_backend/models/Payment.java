@@ -12,7 +12,6 @@ import jakarta.persistence.Table;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 @Table(name = "TB_PAYMENT")
@@ -22,7 +21,7 @@ public class Payment implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Long id;
 
     @Column(name = "date_time")
     private LocalDateTime dateTime;
@@ -37,11 +36,11 @@ public class Payment implements Serializable {
     @JoinColumn(name = "order_id")
     private Order order;
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

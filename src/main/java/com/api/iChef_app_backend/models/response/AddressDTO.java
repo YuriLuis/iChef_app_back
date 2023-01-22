@@ -1,50 +1,20 @@
-package com.api.iChef_app_backend.models;
+package com.api.iChef_app_backend.models.response;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
-import java.io.Serial;
-import java.io.Serializable;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
-@Entity
-@Table(name = "TB_ADDRESS")
-public class Address implements Serializable {
-    @Serial
-    private static final long serialVersionUID = 1L;
+public class AddressDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
-
-    @Column(nullable = false, name = "street_name")
+    @NotBlank
     private String streetName;
-
-    @Column(nullable = false, name = "street_number")
+    @NotBlank
     private String streetNumber;
-
-    @Column(name = "neighborhood")
     private String neighborhood;
-
-    @Column(name = "city")
     private String city;
-
-    @Column(name = "state")
     private String state;
-
-    @Column(name = "zip_code")
+    @Size(max = 8)
     private String zipCode;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getStreetName() {
         return streetName;

@@ -2,8 +2,6 @@ package com.api.iChef_app_backend.models;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AddressTest {
@@ -11,9 +9,8 @@ public class AddressTest {
     @Test
     public void testGetId() {
         Address address = new Address();
-        UUID id = UUID.randomUUID();
-        address.setId(id);
-        assertEquals(id, address.getId());
+        address.setId(123L);
+        assertEquals(123L, address.getId());
     }
 
     @Test

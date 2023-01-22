@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -13,9 +12,8 @@ public class ClientTest {
     @Test
     public void testGetId() {
         Client client = new Client();
-        UUID id = UUID.randomUUID();
-        client.setId(id);
-        assertEquals(id, client.getId());
+        client.setId(123L);
+        assertEquals(123L, client.getId());
     }
 
     @Test

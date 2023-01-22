@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -13,9 +12,8 @@ public class CategoryTest {
     @Test
     public void testGetId() {
         Category category = new Category();
-        UUID id = UUID.randomUUID();
-        category.setId(id);
-        assertEquals(id, category.getId());
+        category.setId(123L);
+        assertEquals(123L, category.getId());
     }
 
     @Test

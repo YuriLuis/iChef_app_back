@@ -3,7 +3,6 @@ package com.api.iChef_app_backend.models;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,9 +11,8 @@ class PaymentTest {
     @Test
     public void testGetId() {
         Payment payment = new Payment();
-        UUID id = UUID.randomUUID();
-        payment.setId(id);
-        assertEquals(id, payment.getId());
+        payment.setId(123L);
+        assertEquals(123L, payment.getId());
     }
 
     @Test
